@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Navbar from "./components/navbar.component.js";
+import Home from "./pages/home.page.js"
+import AddPage from './pages/add.page';
+import EditPage from './pages/edit.page';
+import ReduxToastr from 'react-redux-toastr'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Navbar/>
+      {/* <ReduxToastr/> */}
+      <Route path="/" exact component={Home} />
+      <Route path="/add" exact component={AddPage} />
+      <Route path="/edit/:id" exact component={EditPage} />
+    </Router>
   );
 }
 
