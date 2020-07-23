@@ -9,7 +9,10 @@ import Paper from '@material-ui/core/Paper';
 import List from '../components/list.component';
 import { useSelector, useDispatch} from 'react-redux';
 import Container from '@material-ui/core/Container';
-import { getPeople, deletePerson } from '../store/actions';
+import { getPeople, deletePerson, raffle } from '../store/actions';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles({
     table: {
@@ -20,12 +23,17 @@ const useStyles = makeStyles({
     },
     actions: {
         paddingRight: '2rem'
+    },
+    btnContainer: {
+        padding: '2rem',
+        display: 'flex',
+        justifyContent: 'flex-end'
     }
 });
 
 export default function Home(){
     const classes = useStyles();
-    const people = useSelector(state =>state.people);
+    const people = useSelector(state =>state.people.list);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -34,6 +42,10 @@ export default function Home(){
 
     const handleDelete = (person) =>{
         dispatch(deletePerson(person));
+    }
+
+    const handleRaffle = () => {
+        dispatch(raffle(people));
     }
 
     return(
@@ -53,6 +65,16 @@ export default function Home(){
                     <List people={people} handleDelete={handleDelete} />
                 </Table>
             </TableContainer>
+            <div  className={classes.btnContainer}>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={handleRaffle}
+                    startIcon={<PlayCircleOutlineIcon />}
+                >
+                    Sortear agora!
+                </Button>
+            </div>
         </Container>
        
     )
