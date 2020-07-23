@@ -36,7 +36,7 @@ export default function Navbar(){
                 </IconButton>
                 <Typography variant="h6" className={classes.title}>
                     <Link to="/" className={classes.titleText}>
-                        Amigo Secreto Online <span role="img">👀</span>
+                        Amigo Secreto Online <span role="img">🕵🏾‍♂️</span>
                     </Link>
                 </Typography>
                 <Tooltip title="Adicionar nova pessoa" arrow>

@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
     <Navbar/>
-      {/* <ReduxToastr/> */}
+      <ReduxToastr/>
       <Route path="/" exact component={Home} />
       <Route path="/add" exact component={AddPage} />
       <Route path="/edit/:id" exact component={EditPage} />

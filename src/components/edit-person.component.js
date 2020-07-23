@@ -7,7 +7,7 @@ import PersonForm from './person-form.component';
 const EditPerson = (props) => {
   
     const { id } = useParams();
-    const person = useSelector(state => state.people.find(e => e._id === id));
+    const person = useSelector(state => state.people.list.find(e => e._id === id));
     const [name, setName] = useState(person.name);
     const [email, setEmail] = useState(person.email);
 
