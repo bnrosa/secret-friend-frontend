@@ -38,7 +38,7 @@ export default function Home(){
 
     useEffect(() => {
         dispatch(getPeople());
-    }, []);
+    }, [dispatch]);
 
     const handleDelete = (person) =>{
         dispatch(deletePerson(person));

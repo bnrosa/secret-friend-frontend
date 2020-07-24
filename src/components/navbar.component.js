@@ -31,12 +31,9 @@ export default function Navbar(){
     return(
         <AppBar className={classes.appBar} position="static" color="primary">
             <Toolbar>
-                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                    <MenuIcon />
-                </IconButton>
                 <Typography variant="h6" className={classes.title}>
                     <Link to="/" className={classes.titleText}>
-                        Amigo Secreto Online <span role="img">🕵🏾‍♂️</span>
+                        Amigo Secreto Online <span role="img" aria-label="detective">🕵🏾‍♂️</span>
                     </Link>
                 </Typography>
                 <Tooltip title="Adicionar nova pessoa" arrow>
