@@ -58,7 +58,6 @@ export function raffle(payload){
     return dispatchEvent => {
         axios.post('raffle/', payload)
             .then(() =>{
-                console.log(payload)
                 toastr.success('Parabéns!', 'Seu sorteio foi realizado com sucesso!')
             })
             .catch(() =>{
